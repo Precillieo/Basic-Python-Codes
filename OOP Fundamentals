@@ -1,0 +1,120 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled7.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyNvrKxS05V6bzdBFGHEoNCq",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Precillieo/Basic-Python-Codes/blob/master/OOP%20Fundamentals\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "gPJzfNsfDIWq",
+        "outputId": "a4b20d4b-c819-407e-8777-20fbdab18f50",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "source": [
+        "class Cancer:\n",
+        "    '''\n",
+        "  This class defines two privates attributes _color and _nucleon\n",
+        "  Also, getter and setter methods are provided for the attributes\n",
+        "  ''' \n",
+        "\n",
+        "    def __init__(self, color='black', nucleon='single'):\n",
+        "        self.__color = color\n",
+        "        self.__nucleon = nucleon\n",
+        "\n",
+        "    def get_color(self):\n",
+        "        return self.__color\n",
+        "\n",
+        "    def set_color(self, color):\n",
+        "        self.__color = color\n",
+        "\n",
+        "    def get_nucleon(self):\n",
+        "        return self.__nucleon\n",
+        "\n",
+        "    def set_nucleon(self, nucleon):\n",
+        "        self.__nucleon = nucleon\n",
+        "\n",
+        "\n",
+        "class BreastCancer(Cancer):\n",
+        "    '''\n",
+        "  create a constructor specifically for Breast Cancer with an additional attribute\n",
+        "  parent class should always be called thereafter,  self is a Breast Cancer but also Cancer\n",
+        "  '''\n",
+        "    def __init__(self, shape, tumor_size):\n",
+        "      super().__init__()\n",
+        "      self.__shape = shape\n",
+        "      self.__tumor_size = tumor_size\n",
+        "\n",
+        "    def get_shape(self):\n",
+        "        return self.__shape\n",
+        "    def set_shape(self, shape):\n",
+        "        self.__shape = shape\n",
+        "\n",
+        "    def get_tumor_size(self):\n",
+        "        return self.__tumor_size\n",
+        "    def set_tumor_size(self, tumor_size):\n",
+        "        self.__tumor_size = tumor_size\n",
+        "\n",
+        "b_can = BreastCancer('irregular', 3.3)\n",
+        "\n",
+        "#print out the newly added functionalities\n",
+        "print('What is the shape of the BreastCancer?',b_can.get_shape()) \n",
+        "print('What is the size of the tumor?', b_can.get_tumor_size())\n",
+        "print(\"Color of the Parent Cancer:\", b_can.get_color())\n",
+        "print('Nucleon of the Parent Cancer?', b_can.get_nucleon())\n",
+        "b_can.set_nucleon('multinucleon')\n",
+        "print(' Nucleon of the BreastCancer ?', b_can.get_nucleon())\n",
+        "b_can.set_color(\"Red\")\n",
+        "print(\"Color of the BreastCancer?':\", b_can.get_color())"
+      ],
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "What is the shape of the BreastCancer? irregular\n",
+            "What is the size of the tumor? 3.3\n",
+            "Color of the Parent Cancer: black\n",
+            "Nucleon of the Parent Cancer? single\n",
+            " Nucleon of the BreastCancer ? multinucleon\n",
+            "Color of the BreastCancer?': Red\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "MZSur_Bymoyz"
+      },
+      "source": [
+        ""
+      ],
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
